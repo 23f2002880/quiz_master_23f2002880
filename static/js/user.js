@@ -96,7 +96,7 @@ function loadQuizzes(chapterId) {
 }
 
 
-function startQuiz(quizId) {
+function startQuiz(quizId) {  //quiz starts in new window
     window.open(`/user/quiz/${quizId}`, "_blank", `width=${screen.width},height=${screen.height},fullscreen=yes`);
 }
 
@@ -104,7 +104,7 @@ function startCountdown(timeStr) {
     let timeParts = timeStr.split(":");
     let hours = parseInt(timeParts[0]) || 0;
     let minutes = parseInt(timeParts[1]) || 0;
-    let seconds = parseInt(timeParts[2]) || 0; // ✅ Now correctly handling seconds
+    let seconds = parseInt(timeParts[2]) || 0; // ✅ timer correctly handling seconds
 
     let timerElement = document.getElementById("timer");
 
@@ -118,7 +118,7 @@ function startCountdown(timeStr) {
 
         if (hrs === 0 && mins === 0 && secs === 0) {
             clearInterval(countdown);
-            submitQuiz();  // ✅ Auto-submit when time runs out
+            submitQuiz();  // ✅Quiz will Auto-submit when time runs out
         }
 
         if (secs === 0) {
