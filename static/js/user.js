@@ -23,7 +23,7 @@ function loadUserDashboard() {
     .catch(error => console.error("❌ Error loading quizzes:", error));
 }
 
-// ✅ Load All Subjects with ID and Description
+// ✅ Load All Subjects with ID and Description and fetch them to frontend 
 function loadSubjects() {
     fetch("/api/subjects")
     .then(response => response.json())
@@ -46,7 +46,7 @@ function loadSubjects() {
     .catch(error => console.error("❌ Error loading subjects:", error));
 }
 
-// ✅ Load Chapters for Selected Subject (with ID)
+// ✅ Load and fetch Chapters for Selected Subject (with ID) to frontend 
 function loadChapters(subjectId) {
     fetch(`/api/chapters/by_subject?subject_id=${subjectId}`)
     .then(response => response.json())
@@ -70,7 +70,7 @@ function loadChapters(subjectId) {
     .catch(error => console.error("❌ Error loading chapters:", error));
 }
 
-// ✅ Load Quizzes for Selected Chapter (with ID)
+// ✅ Load and fetch Quizzes for Selected Chapter (with ID)
 function loadQuizzes(chapterId) {
     fetch(`/api/quizzes/by_chapter?chapter_id=${chapterId}`)
     .then(response => response.json())

@@ -157,7 +157,7 @@ def start_quiz(quiz_id):
 
 
 
-# ✅ Route to Submit the Quiz
+# ✅ API to Submit the Quiz and getting scores
 @user_routes.route("/api/submit_quiz/<int:quiz_id>", methods=["POST"])
 def submit_quiz(quiz_id):
     if "user_logged_in" not in session:

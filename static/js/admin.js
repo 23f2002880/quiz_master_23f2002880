@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// Load subjects from backend
+// Load subjects from backend and fetching subjects
 function loadSubjects() {
     const subjectList = document.getElementById("subjectList");
     
@@ -142,7 +142,7 @@ function deleteSubject(subjectId) {
     }
 }
 
-function loadChapters() {
+function loadChapters() {        //fetching chapters
     fetch("/api/chapters")
     .then(response => response.json())
     .then(data => {
@@ -264,7 +264,7 @@ function editChapter(chapterId, oldName, oldDescription, oldSubjectId) {
 }
 
 
-// Helper function to create a dropdown for selecting subjects
+
 // Helper function to create a dropdown for selecting subjects
 function promptDropdown(message, options) {
     return new Promise((resolve) => {

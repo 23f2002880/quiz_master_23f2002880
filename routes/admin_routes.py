@@ -52,7 +52,7 @@ def logout_admin():
     response.headers["Expires"] = "0"
     return response
 
-# Get all subjects
+# API for getting all subjects
 @admin_routes.route("/api/subjects", methods=["GET"])
 def get_subjects():
     subjects = Subject.query.all()
@@ -229,7 +229,7 @@ def add_quiz():
 
     return jsonify({"message": "Quiz added successfully!", "id": new_quiz.id})
 
-
+# ✅ API for getting chapter by subject
 @admin_routes.route("/api/chapters/by_subject", methods=["GET"])  # ✅ Renamed route
 def get_chapters_by_subject():
     subject_id = request.args.get("subject_id")
@@ -300,7 +300,7 @@ def add_question():
 
     return jsonify({"message": "Question added successfully!", "id": new_question.id})
 
-#for getting question for a quiz
+# API for getting question for a quiz
 @admin_routes.route("/api/questions/<int:quiz_id>", methods=["GET"])
 def get_questions(quiz_id):
     questions = Question.query.filter_by(quiz_id=quiz_id).all()

@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// ✅ Function to Load Chapters Based on Selected Subject
-function loadChaptersBySubject(chapterSelectId, subjectId) {  // ✅ Renamed function
+// ✅ Function to fetch and Load Chapters Based on Selected Subject
+function loadChaptersBySubject(chapterSelectId, subjectId) {  
     const chapterSelect = document.getElementById(chapterSelectId);
     chapterSelect.innerHTML = '<option value="">Select Chapter</option>';
 
@@ -277,7 +277,7 @@ function toggleQuestions(quizId) {
     }
 }
 
-// ✅ Function to Load Questions for a Specific Quiz
+// ✅ Function to Load and fetch Questions for a Specific Quiz
 function loadQuestions(quizId) {
     fetch(`/api/questions/${quizId}`)
     .then(response => response.json())
