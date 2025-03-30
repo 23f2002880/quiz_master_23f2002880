@@ -38,24 +38,31 @@ cd quiz-app  (enter to the directory)
 
 ### 2️⃣ Create & Activate a Virtual Environment (ignore if running your own env)
 
-On Windows <br>
+### On Windows <br>
+
 python -m venv venv <br>
 Set-ExecutionPolicy Unrestricted -Scope Process  (if aliasing issue) <br>
 venv\Scripts\activate <br>
-On macOS/Linux <br>
+
+### On macOS/Linux <br>
 python3 -m venv venv <br>
 source venv/bin/activate <br>
 
 ### 3️⃣ Install Dependencies <br>
 pip install flask flask_sqlalchemy flask_migrate flask_restful sqlalchemy Werkzeug <br>
 ### 4️⃣ Database is already set up. <br>
+
 Admin Credentials: <br>
+
 username : admin   <br>
 password : admin123 <br>
+
 Dummy user credentilas:  <br>
+
 username : user1  <br>
 password : password  <br>
 
 ### 5️⃣ Run the Application  <br>
 python app.py  <br>
+
 The server will start at: http://127.0.0.1:5000
